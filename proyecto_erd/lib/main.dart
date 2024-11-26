@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:proyecto_erd/pages/login_page.dart';
-import 'package:proyecto_erd/pages/dashboard_page.dart';
 import 'package:proyecto_erd/Controllers/check_controller.dart';
+// ignore: unused_import
+import 'package:proyecto_erd/pages/dashboard_page.dart';
 
 void main() {
   runApp(MyApp());

@@ -46,7 +46,9 @@ class _LoginPageState extends State<LoginPage> {
         // Suponiendo que la respuesta incluye un token o un mensaje de éxito
         final responseData = json.decode(response.body);
 
+        // ignore: unused_local_variable
         String accessToken = responseData['access_token'];
+        // ignore: unused_local_variable
         String tokenType = responseData['token_type'];
         // ignore: use_build_context_synchronously
         ScaffoldMessenger.of(context).showSnackBar(
