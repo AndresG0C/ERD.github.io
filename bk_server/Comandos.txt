@@ -1,0 +1,8 @@
+py -m venv myenv
+myenv\Scripts\activate
+pip install -r app/requirements.txt
+py -m uvicorn app.main:app --reload
+py -m uvicorn app:app --host 127.0.0.1 --port 8000 --workers 4
+pip install fastapi --upgrade
+pip install "pydantic<2.0"
+
