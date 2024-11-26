@@ -51,7 +51,7 @@ class _GestionUsuariosPage extends State<GestionUsuariosPage> {
           const SizedBox(height: 10.0),
           // Muestra la vista según el botón seleccionado
           Expanded(
-            child: selectedIndex == 0 ? CrearUsuario() : const ResetearUsuarioPage(),
+            child: selectedIndex == 0 ? const CrearUsuario() : const ResetearUsuarioPage(),
           ),
         ]),
       ),

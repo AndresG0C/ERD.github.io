@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
     // Pasamos el username a DashboardPage
     _pages = [
       DashboardPage(username: widget.username), // Se pasa el username
-      GestionPreciosPage(),
+      const GestionPreciosPage(),
       const GestionUsuariosPage(),
       const QuestionPage(),
     ];
