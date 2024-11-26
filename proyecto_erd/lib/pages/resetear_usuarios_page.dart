@@ -1,59 +1,58 @@
 import 'package:flutter/material.dart';
 
-class CrearUsuario extends StatelessWidget {
+class ResetearUsuarioPage extends StatefulWidget {
+  const ResetearUsuarioPage({super.key});
+
+  @override
+  State<ResetearUsuarioPage> createState() => _ResetearUsuarioPageState();
+}
+
+class _ResetearUsuarioPageState extends State<ResetearUsuarioPage> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      // Añadir un SingleChildScrollView aquí
       child: Column(
         children: [
-          SizedBox(height: 50.0),
-          Text(
-              'Por favor ingrese un nombre de usuario y una contraseña para el cliente'),
-          SizedBox(height: 40.0),
-          TextField(
+          const SizedBox(height: 50.0),
+          const Text(
+              'Por favor ingrese el nombre de usuario del cliente que desea resetear'),
+          const SizedBox(height: 40.0),
+          const TextField(
             decoration: InputDecoration(
               labelText: 'Usuario',
               border: OutlineInputBorder(),
             ),
           ),
-          SizedBox(height: 15.0),
-          TextField(
-            decoration: InputDecoration(
-              labelText: 'Contraseña',
-              border: OutlineInputBorder(),
-            ),
-          ),
-          SizedBox(height: 50.0),
+          const SizedBox(height: 50.0),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton(
                 onPressed: () {},
-                child: Text('Crear'),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
                   padding:
-                    EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50),
                   ),
                   foregroundColor: Colors.white,
                 ),
+                child: const Text('Resetear'),
               ),
-              SizedBox(width: 16.0),
+              const SizedBox(width: 16.0),
               ElevatedButton(
                 onPressed: () {},
-                child: Text('Cancelar'),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(12, 13, 9, 234),
+                  backgroundColor: const Color.fromARGB(12, 13, 9, 234),
                   padding:
-                    EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50),
                   ),
                   foregroundColor: Colors.black,
                 ),
+                child: const Text('Cancelar'),
               ),
             ],
           ),

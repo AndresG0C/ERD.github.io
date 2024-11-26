@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_erd/pages/dashboard_page.dart';
-import 'package:proyecto_erd/pages/gestionPrecios_page.dart';
-import 'package:proyecto_erd/pages/gestionUsuarios_page.dart';
+import 'package:proyecto_erd/pages/gestion_precios_page.dart';
+import 'package:proyecto_erd/pages/gestion_usuarios_page.dart';
 import 'package:proyecto_erd/pages/question_page.dart';
 
 class HomePage extends StatefulWidget {
 
   final String username; // Recibe el atributo desde LoginPage
 
-  HomePage({required this.username}); // Constructor para recibir el username
+  const HomePage({super.key, required this.username}); // Constructor para recibir el username
 
   @override
+  // ignore: library_private_types_in_public_api
   _HomePageState createState() => _HomePageState();
 }
 
@@ -25,8 +26,8 @@ class _HomePageState extends State<HomePage> {
     _pages = [
       DashboardPage(username: widget.username), // Se pasa el username
       GestionPreciosPage(),
-      GestionUsuariosPage(),
-      QuestionPage(),
+      const GestionUsuariosPage(),
+      const QuestionPage(),
     ];
   }
 
@@ -60,7 +61,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor:Color.fromARGB(255, 40, 74, 127), // Color cuando está seleccionado
+        selectedItemColor:const Color.fromARGB(255, 40, 74, 127), // Color cuando está seleccionado
         unselectedItemColor: Colors.grey, // Color cuando no está seleccionado
         onTap: _onItemTapped,
       ),
@@ -71,9 +72,11 @@ class _HomePageState extends State<HomePage> {
 // Ejemplo de las páginas
 
 class Page3 extends StatelessWidget {
+  const Page3({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Text('Página 3'),
     );
   }

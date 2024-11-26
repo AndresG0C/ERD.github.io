@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class GestionPreciosPage extends StatefulWidget {
+  const GestionPreciosPage({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _GestionPreciosPage createState() => _GestionPreciosPage();
 }
 
@@ -14,77 +17,77 @@ class _GestionPreciosPage extends State<GestionPreciosPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Gestion de Precios'),
-        backgroundColor: Color(0xFFDCE9FD),
+        title: const Text('Gestion de Precios'),
+        backgroundColor:const Color(0xFFDCE9FD),
         foregroundColor: Colors.black,
         automaticallyImplyLeading: false,
       ),
       resizeToAvoidBottomInset: true, // Evita el espacio en blanco al abrir el teclado
       body: Container(
         height: MediaQuery.of(context).size.height, // Asegura que el contenedor ocupe toda la pantalla
-        color: Color(0xFFDCE9FD),
+        color: const Color(0xFFDCE9FD),
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(30.0),
           child: Column(
             children: [
-              SizedBox(height: 50.0),
-              Text(
+              const SizedBox(height: 50.0),
+              const Text(
                 'Por favor ingrese el código del producto para cambiar su precio',
               ),
-              SizedBox(height: 40.0),
+              const SizedBox(height: 40.0),
               TextField(
                 controller: _codigoController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Codigo',
                   border: OutlineInputBorder(),
                 ),
               ),
-              SizedBox(height: 16.0),
+              const SizedBox(height: 16.0),
               TextField(
                 controller: _productoController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Producto',
                   border: OutlineInputBorder(),
                 ),
               ),
-              SizedBox(height: 16.0),
+              const SizedBox(height: 16.0),
               TextField(
                 controller: _precioController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Precio',
                   border: OutlineInputBorder(),
                 ),
               ),
-              SizedBox(height: 50.0),
+              const SizedBox(height: 50.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
                     onPressed: () {},
-                    child: Text('Guardar'),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue,
                       padding:
-                          EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                          const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50),
                       ),
                       foregroundColor: Colors.white,
                     ),
+                    child: const Text('Guardar'),
                   ),
-                  SizedBox(width: 16.0),
+                  const SizedBox(width: 16.0),
                   ElevatedButton(
                     onPressed: () {},
-                    child: Text('Cancelar'),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color.fromARGB(12, 13, 9, 234),
+                      backgroundColor: const Color.fromARGB(12, 13, 9, 234),
                       padding:
-                          EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                          const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50),
                       ),
                       foregroundColor: Colors.black,
                     ),
+                    child: const Text('Cancelar'),
                   ),
                 ],
               ),

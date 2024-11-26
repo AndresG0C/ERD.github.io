@@ -3,7 +3,10 @@ import 'package:proyecto_erd/Controllers/question_controller.dart';
 import 'package:proyecto_erd/models/question.dart';
 
 class QuestionPage extends StatefulWidget {
+  const QuestionPage({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _QuestionPage createState() => _QuestionPage();
 }
 
@@ -15,26 +18,26 @@ class _QuestionPage extends State<QuestionPage> {
     List<Question> questions = controller.getQuestions();
     return Scaffold(
       appBar: AppBar(
-        title: Text('Ayuda'),
-        backgroundColor: Color(0xFFDCE9FD),
+        title: const Text('Ayuda'),
+        backgroundColor: const Color(0xFFDCE9FD),
         foregroundColor: Colors.black,
         automaticallyImplyLeading: false,
       ),
       body: Container(
-        color: Color(0xFFDCE9FD),
+        color: const Color(0xFFDCE9FD),
         padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 20.0),
-            Text(
+            const SizedBox(height: 20.0),
+            const Text(
               'Hola! ¿En qué te podemos ayudar?',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             // Usar Expanded para que ListView ocupe el espacio disponible
             Expanded(
               child: ListView.builder(
@@ -42,11 +45,11 @@ class _QuestionPage extends State<QuestionPage> {
                 itemBuilder: (context, index) {
                   final question = questions[index];
                   return Card(
-                    margin: EdgeInsets.symmetric(vertical: 10.0),
+                    margin: const EdgeInsets.symmetric(vertical: 10.0),
                     elevation: 0, // Sin sombra
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10), // Borde redondeado suave
-                      side: BorderSide(color: Colors.transparent), // Sin borde visible
+                      side: const BorderSide(color: Colors.transparent), // Sin borde visible
                     ),
                     child: Theme(
                       data: Theme.of(context).copyWith(
@@ -55,9 +58,9 @@ class _QuestionPage extends State<QuestionPage> {
                       child: ExpansionTile(
                         title: Text(
                           question.question,
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: const TextStyle(fontWeight: FontWeight.bold),
                         ),
-                        tilePadding: EdgeInsets.symmetric(horizontal: 16.0), // Padding para ajustar márgenes
+                        tilePadding: const EdgeInsets.symmetric(horizontal: 16.0), // Padding para ajustar márgenes
                         children: [
                           Container(
                             padding: const EdgeInsets.all(8.0),

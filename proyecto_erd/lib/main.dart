@@ -9,6 +9,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: LoginPage(), // Inicia la página de login
+        home: const LoginPage(), // Inicia la página de login
       ),
     );
   }

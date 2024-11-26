@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class CheckController extends ChangeNotifier {
   // Lista de tareas con su estado
-  List<Map<String, dynamic>> _tasks = [
+  final List<Map<String, dynamic>> _tasks = [
     {"title": "Cuentas por cobrar (CxC)", "isChecked": false},
     {"title": "Cuentas por pagar (CxP)", "isChecked": false},
     {"title": "Activos Fijos (Af)", "isChecked": false},
