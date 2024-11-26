@@ -15,8 +15,10 @@ class _GestionUsuariosPage extends State<GestionUsuariosPage> {
     return Scaffold(
       appBar: AppBar(
           title: Text('Gestion de Usuarios'),
-          backgroundColor: const Color.fromARGB(255, 9, 32, 234),
-          foregroundColor: Colors.white),
+          backgroundColor: Color(0xFFDCE9FD),
+          foregroundColor: Colors.black,
+          automaticallyImplyLeading: false,
+        ),
       body: Container(
         color: Color(0xFFDCE9FD),
         padding: const EdgeInsets.all(50.0),

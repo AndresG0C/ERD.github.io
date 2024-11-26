@@ -15,8 +15,9 @@ class _GestionPreciosPage extends State<GestionPreciosPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Gestion de Precios'),
-        backgroundColor: const Color.fromARGB(255, 9, 32, 234),
-        foregroundColor: Colors.white,
+        backgroundColor: Color(0xFFDCE9FD),
+        foregroundColor: Colors.black,
+        automaticallyImplyLeading: false,
       ),
       resizeToAvoidBottomInset: true, // Evita el espacio en blanco al abrir el teclado
       body: Container(
@@ -62,9 +63,9 @@ class _GestionPreciosPage extends State<GestionPreciosPage> {
                     onPressed: () {},
                     child: Text('Guardar'),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color.fromARGB(173, 9, 32, 234),
+                      backgroundColor: Colors.blue,
                       padding:
-                          EdgeInsets.symmetric(horizontal: 35, vertical: 20),
+                          EdgeInsets.symmetric(horizontal: 25, vertical: 15),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50),
                       ),
@@ -78,7 +79,7 @@ class _GestionPreciosPage extends State<GestionPreciosPage> {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color.fromARGB(12, 13, 9, 234),
                       padding:
-                          EdgeInsets.symmetric(horizontal: 35, vertical: 20),
+                          EdgeInsets.symmetric(horizontal: 25, vertical: 15),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50),
                       ),

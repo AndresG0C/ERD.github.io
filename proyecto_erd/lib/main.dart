@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-// import 'package:proyecto_erd/pages/gestionUsuarios_page.dart';
+import 'package:provider/provider.dart';
 import 'package:proyecto_erd/pages/login_page.dart';
+import 'package:proyecto_erd/pages/dashboard_page.dart';
+import 'package:proyecto_erd/Controllers/check_controller.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,13 +11,19 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Siesa Enterprise',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return MultiProvider(
+      providers: [
+        // Asegúrate de que CheckController está disponible en todo el árbol de widgets
+        ChangeNotifierProvider(create: (context) => CheckController()), 
+      ],
+      child: MaterialApp(
+        title: 'Siesa Enterprise',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: LoginPage(), // Inicia la página de login
       ),
-      home: LoginPage(),
     );
   }
 }

@@ -60,8 +60,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor:
-            Theme.of(context).primaryColor, // Color cuando está seleccionado
+        selectedItemColor:Color.fromARGB(255, 40, 74, 127), // Color cuando está seleccionado
         unselectedItemColor: Colors.grey, // Color cuando no está seleccionado
         onTap: _onItemTapped,
       ),

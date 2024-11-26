@@ -16,8 +16,9 @@ class _QuestionPage extends State<QuestionPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Ayuda'),
-        backgroundColor: const Color.fromARGB(255, 9, 32, 234),
-        foregroundColor: Colors.white,
+        backgroundColor: Color(0xFFDCE9FD),
+        foregroundColor: Colors.black,
+        automaticallyImplyLeading: false,
       ),
       body: Container(
         color: Color(0xFFDCE9FD),

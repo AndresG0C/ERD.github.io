@@ -43,6 +43,10 @@ class _LoginPageState extends State<LoginPage> {
       if (response.statusCode == 200) {
         // Suponiendo que la respuesta incluye un token o un mensaje de éxito
         final responseData = json.decode(response.body);
+
+        String accessToken = responseData['access_token'];
+        String tokenType = responseData['token_type'];
+        
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text('Inicio de sesión exitoso')),
         );
@@ -144,11 +148,11 @@ class _LoginPageState extends State<LoginPage> {
               onPressed: _login,
               child: Text('Iniciar sesión'), 
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xAA0920EA), // Color de fondo personalizado
-                
-                padding: EdgeInsets.symmetric(horizontal: 35, vertical: 24), // Espacio dentro del botón
+                backgroundColor: Colors.blue, // Color de fondo personalizado
+                padding:
+                  EdgeInsets.symmetric(horizontal: 25, vertical: 15),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(50), // Bordes redondeados opcionales
+                   borderRadius: BorderRadius.circular(50), // Bordes redondeados opcionales
                 ),
                 foregroundColor: Colors.white
               ),

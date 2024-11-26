@@ -31,8 +31,9 @@ class _ResetearUsuarioPageState extends State<ResetearUsuarioPage> {
                 onPressed: () {},
                 child: Text('Resetear'),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(173, 9, 32, 234),
-                  padding: EdgeInsets.symmetric(horizontal: 35, vertical: 20),
+                  backgroundColor: Colors.blue,
+                  padding:
+                    EdgeInsets.symmetric(horizontal: 25, vertical: 15),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50),
                   ),
@@ -45,7 +46,8 @@ class _ResetearUsuarioPageState extends State<ResetearUsuarioPage> {
                 child: Text('Cancelar'),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color.fromARGB(12, 13, 9, 234),
-                  padding: EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+                  padding:
+                    EdgeInsets.symmetric(horizontal: 25, vertical: 15),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50),
                   ),

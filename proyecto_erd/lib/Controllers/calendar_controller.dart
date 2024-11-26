@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CalendarView extends StatefulWidget {
+  final Function(int month, int day) onDateSelected;
+  CalendarView({required this.onDateSelected});
   // final String username;
 
   // CalendarView({required this.username});
@@ -88,6 +90,10 @@ class _CalendarViewState extends State<CalendarView> {
       duration: Duration(milliseconds: 300),
       curve: Curves.easeInOut,
     );
+  }
+
+  void _onDaySelected(int day) {
+    widget.onDateSelected(selectedMonthIndex, day);  // Llamar al callback cuando se selecciona un día
   }
 
   @override
@@ -197,6 +203,7 @@ class _CalendarViewState extends State<CalendarView> {
                           setState(() {
                             selectedDay = days[index];
                           });
+                          _onDaySelected(days[index]);
                         },
                         child: Container(
                           padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
