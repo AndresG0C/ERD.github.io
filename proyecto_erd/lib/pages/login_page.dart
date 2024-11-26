@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_erd/Controllers/user_controller.dart';
 import 'package:proyecto_erd/pages/home_page.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -18,30 +20,76 @@ class _LoginPageState extends State<LoginPage> {
     });
   }
 
-  final UserController _userController = UserController();
-
-  void _login() {
+  Future<void> _login() async {
     String username = _usernameController.text;
     String password = _passwordController.text;
 
+    // Crear el cuerpo del request
+    Map<String, String> body = {
+      'username': username,
+      'password': password,
+    };
 
-    if (_userController.login(username, password)) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Inicio de sesión exitoso')),
+    try {
+      // Hacer la petición POST
+      final response = await http.post(
+        Uri.parse('http://127.0.0.1:8000/login'),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: json.encode(body),
       );
 
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => HomePage(username: username),
-        ),
-      );
-    } else {
+      if (response.statusCode == 200) {
+        // Suponiendo que la respuesta incluye un token o un mensaje de éxito
+        final responseData = json.decode(response.body);
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Inicio de sesión exitoso')),
+        );
+
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => HomePage(username: username),
+          ),
+        );
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Credenciales inválidas')),
+        );
+      }
+    } catch (e) {
+      // Manejar errores de red
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Credenciales inválidas')),
+        SnackBar(content: Text('Error de red: $e')),
       );
     }
   }
+
+  // final UserController _userController = UserController();
+
+  // void _login() {
+  //   String username = _usernameController.text;
+  //   String password = _passwordController.text;
+
+
+  //   if (_userController.login(username, password)) {
+  //     ScaffoldMessenger.of(context).showSnackBar(
+  //       SnackBar(content: Text('Inicio de sesión exitoso')),
+  //     );
+
+  //     Navigator.push(
+  //       context,
+  //       MaterialPageRoute(
+  //         builder: (context) => HomePage(username: username),
+  //       ),
+  //     );
+  //   } else {
+  //     ScaffoldMessenger.of(context).showSnackBar(
+  //       SnackBar(content: Text('Credenciales inválidas')),
+  //     );
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
