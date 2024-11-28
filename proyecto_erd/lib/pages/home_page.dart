@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_erd/pages/dashboard_page.dart';
+import 'package:proyecto_erd/pages/fechas/diaView.dart';
 import 'package:proyecto_erd/pages/gestion_precios_page.dart';
 import 'package:proyecto_erd/pages/gestion_usuarios_page.dart';
 import 'package:proyecto_erd/pages/question_page.dart';
@@ -24,7 +25,7 @@ class _HomePageState extends State<HomePage> {
     super.initState();
     // Pasamos el username a DashboardPage
     _pages = [
-      DashboardPage(username: widget.username), // Se pasa el username
+      // Se pasa el username
       const GestionPreciosPage(),
       const GestionUsuariosPage(),
       const QuestionPage(),

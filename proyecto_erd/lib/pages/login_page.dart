@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto_erd/pages/fechas/diaView.dart';
 import 'package:proyecto_erd/pages/home_page.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -55,13 +56,7 @@ class _LoginPageState extends State<LoginPage> {
           const SnackBar(content: Text('Inicio de sesión exitoso')),
         );
 
-        Navigator.push(
-          // ignore: use_build_context_synchronously
-          context,
-          MaterialPageRoute(
-            builder: (context) => HomePage(username: username),
-          ),
-        );
+     
       } else {
         // ignore: use_build_context_synchronously
         ScaffoldMessenger.of(context).showSnackBar(

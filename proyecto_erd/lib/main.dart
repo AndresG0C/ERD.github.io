@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
+import 'package:proyecto_erd/Controllers/fechas_controller.dart';
+import 'package:proyecto_erd/pages/fechas/diaView.dart';
 import 'package:proyecto_erd/pages/login_page.dart';
 import 'package:proyecto_erd/Controllers/check_controller.dart';
 // ignore: unused_import
 import 'package:proyecto_erd/pages/dashboard_page.dart';
 
 void main() {
+  FechasController _controller = Get.put(FechasController());
   runApp(MyApp());
 }
 
@@ -25,7 +29,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const LoginPage(), // Inicia la página de login
+        home: const VistaFechas(), // Inicia la página de login
       ),
     );
   }
